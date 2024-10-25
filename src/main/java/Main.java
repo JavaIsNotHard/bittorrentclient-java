@@ -36,6 +36,9 @@ public class Main {
         } else if (firstLetter == 'l') {
             Object result = bencode.decode(bencodedString.getBytes(), Type.LIST);
             return result;
+        } else if (firstLetter == 'd') {
+            Object result = bencode.decode(bencodedString.getBytes(), Type.DICTIONARY);
+            return result;
         }
         else {
             throw new RuntimeException("Bencode: " + bencodedString + " is not a digit");
